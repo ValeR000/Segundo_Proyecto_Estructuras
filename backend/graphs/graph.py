@@ -37,14 +37,14 @@ class Graph:  # Guarda vetices y aristas y permite agregarlos, buscarlos y recor
     def get_vertex(self, vertex_id):
 
         if vertex_id not in self.vertices:
-            raise NotFoundError(f"Vertex '{vertex_id}' does not exist.")
+            raise NotFoundError(vertex_id)
         
         return self.vertices[vertex_id]
 
     def get_edge(self, edge_id):
 
         if edge_id not in self.edges:
-            raise NotFoundError(f"Edge '{edge_id}' does not exist.")
+            raise NotFoundError(edge_id)
         
         return self.edges[edge_id]
 
@@ -71,3 +71,5 @@ class Graph:  # Guarda vetices y aristas y permite agregarlos, buscarlos y recor
 
     def disable_edge(self, edge_id):
         self.get_edge(edge_id).enabled = False
+
+    #La idea es usar solo una clase grafo que va a tener todos los atributos comunes de los dos grafos y que las clases de cada grafo hereden de esta
